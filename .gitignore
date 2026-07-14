@@ -1,0 +1,5 @@
+.vercel/
+server.out.log
+server.err.log
+review-*.png
+verify-*.png
