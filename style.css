@@ -146,7 +146,7 @@ a { color: inherit; }
     object-position: center;
     opacity: 0;
     transform: scale(1.07);
-    transition: opacity 2.4s ease-in-out, transform 0s 2.5s;
+    transition: opacity 3.2s cubic-bezier(.45, 0, .2, 1), transform 0s 3.3s;
     will-change: opacity, transform;
 }
 
@@ -159,7 +159,7 @@ a { color: inherit; }
     z-index: 1;
     opacity: 1;
     transform: scale(1.005);
-    transition: opacity 2.4s ease-in-out, transform 13s cubic-bezier(.2, .6, .2, 1);
+    transition: opacity 3.2s cubic-bezier(.45, 0, .2, 1), transform 12s cubic-bezier(.2, .6, .2, 1);
 }
 
 .hero-shade {
@@ -376,7 +376,7 @@ a { color: inherit; }
     transform-origin: left;
 }
 
-.slide-dots button.active i { animation: slideProgress 8.5s linear forwards; }
+.slide-dots button.active i { animation: slideProgress 6.5s linear forwards; }
 
 .statement {
     position: relative;
