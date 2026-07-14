@@ -103,13 +103,20 @@ button, a { touch-action: manipulation; }
 .site-header nav {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 2px;
 }
 
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 34px;
+    gap: 2px;
+    padding: 4px;
+    background: rgba(10, 10, 10, .3);
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 100px;
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .18);
 }
 
 .language-switch {
@@ -119,8 +126,8 @@ button, a { touch-action: manipulation; }
     padding: 3px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: rgba(255, 255, 255, .07);
-    border: 1px solid rgba(255, 255, 255, .13);
+    background: rgba(255, 255, 255, .06);
+    border: 0;
     border-radius: 100px;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -160,15 +167,6 @@ html[data-lang="en"] .language-switch::before { transform: translateX(37px); }
 .language-switch button.active { color: var(--ink); }
 .language-switch button:focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; }
 
-[data-i18n] {
-    transition: opacity .15s ease, transform .15s ease;
-}
-
-body.language-changing [data-i18n] {
-    opacity: 0;
-    transform: translateY(3px);
-}
-
 .site-header nav a {
     color: rgba(255, 255, 255, .7);
     font-size: .64rem;
@@ -176,7 +174,12 @@ body.language-changing [data-i18n] {
     letter-spacing: .18em;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color .25s ease;
+    min-height: 36px;
+    padding: 0 17px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 100px;
+    transition: color .25s ease, background .25s ease;
 }
 
 .site-header nav a > span:last-child {
@@ -192,7 +195,10 @@ body.language-changing [data-i18n] {
 }
 
 .site-header nav a:hover,
-.site-header nav a:focus-visible { color: var(--white); }
+.site-header nav a:focus-visible {
+    color: var(--white);
+    background: rgba(255, 255, 255, .07);
+}
 
 .hero {
     position: relative;
@@ -224,7 +230,7 @@ body.language-changing [data-i18n] {
     opacity: 0;
     z-index: 0;
     transform: translate3d(0, 0, 0) scale(1.045);
-    transition: opacity 5.8s cubic-bezier(.45, 0, .55, 1), transform 0s 5.9s;
+    transition: opacity 2.8s cubic-bezier(.45, 0, .55, 1), transform 0s 2.9s;
     will-change: auto;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -239,7 +245,7 @@ body.language-changing [data-i18n] {
     z-index: 2;
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1.005);
-    transition: opacity 5.8s cubic-bezier(.45, 0, .55, 1), transform 15s cubic-bezier(.2, .6, .2, 1);
+    transition: opacity 2.8s cubic-bezier(.45, 0, .55, 1), transform 12s cubic-bezier(.2, .6, .2, 1);
     will-change: opacity, transform;
 }
 
@@ -449,7 +455,7 @@ body.language-changing [data-i18n] {
     transform-origin: left;
 }
 
-.slide-dots button.active i { animation: slideProgress 7s linear forwards; }
+.slide-dots button.active i { animation: slideProgress 5.2s linear forwards; }
 
 .statement {
     position: relative;
@@ -733,7 +739,8 @@ body.language-changing [data-i18n] {
     .brand { font-size: 1.3rem; }
     .site-header nav a:first-child { display: none; }
     .site-header nav a { font-size: .58rem; }
-    .header-actions { gap: 14px; }
+    .header-actions { gap: 0; padding: 3px; }
+    .site-header nav a { min-height: 34px; padding-inline: 12px; }
     .language-switch { width: 70px; height: 34px; }
     .language-switch::before { width: 30px; height: 26px; }
     html[data-lang="en"] .language-switch::before { transform: translateX(33px); }
@@ -875,7 +882,7 @@ body.language-changing [data-i18n] {
     .slide,
     .slide.active {
         transform: translate3d(0, 0, 0) !important;
-        transition: opacity 5.8s cubic-bezier(.45, 0, .55, 1) !important;
+        transition: opacity 2.8s cubic-bezier(.45, 0, .55, 1) !important;
     }
     .slide.outgoing {
         transform: translate3d(0, 0, 0) !important;
