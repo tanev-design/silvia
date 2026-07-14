@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#090909">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Silvia">
-    <meta property="og:description" content="Гледай. После ми пиши.">
+    <meta property="og:description" content="Здравей. Аз съм Силвия.">
     <meta property="og:url" content="https://silviabg.vercel.app/">
     <meta property="og:image" content="https://silviabg.vercel.app/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -15,7 +15,7 @@
     <meta property="og:image:alt" content="Silvia">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Silvia">
-    <meta name="twitter:description" content="Гледай. После ми пиши.">
+    <meta name="twitter:description" content="Здравей. Аз съм Силвия.">
     <meta name="twitter:image" content="https://silviabg.vercel.app/og-image.png">
     <title>Silvia</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -56,7 +56,13 @@
             <div class="hero-shade" aria-hidden="true"></div>
 
             <div class="hero-inner">
-                <h1><span data-i18n="hero_line_1">Гледай.</span><em data-i18n="hero_line_2">После ми пиши.</em></h1>
+                <div class="hero-copy" aria-live="polite">
+                    <h1 class="hero-title active"><span data-i18n="hero_1_line_1">Здравей.</span><em data-i18n="hero_1_line_2">Аз съм Силвия.</em></h1>
+                    <h1 class="hero-title" aria-hidden="true"><span data-i18n="hero_2_line_1">Без думи.</span><em data-i18n="hero_2_line_2">Само настроение.</em></h1>
+                    <h1 class="hero-title" aria-hidden="true"><span data-i18n="hero_3_line_1">Снимките</span><em data-i18n="hero_3_line_2">казват достатъчно.</em></h1>
+                    <h1 class="hero-title" aria-hidden="true"><span data-i18n="hero_4_line_1">Останалото</span><em data-i18n="hero_4_line_2">ще кажа лично.</em></h1>
+                    <h1 class="hero-title" aria-hidden="true"><span data-i18n="hero_5_line_1">Пиши ми.</span><em data-i18n="hero_5_line_2">Ако ти се иска.</em></h1>
+                </div>
 
                 <div class="hero-bottom">
                     <a class="scroll-link" href="#silvia"><span data-i18n="scroll">Надолу</span><i aria-hidden="true"></i></a>
@@ -155,7 +161,11 @@
                     meta_title: 'Silvia',
                     meta_description: 'Silvia — личен сайт и директен контакт.',
                     skip: 'Към съдържанието', nav_about: 'За мен', nav_contact: 'Контакт',
-                    hero_line_1: 'Гледай.', hero_line_2: 'После ми пиши.', scroll: 'Надолу', phone_action: 'Обади се',
+                    hero_1_line_1: 'Здравей.', hero_1_line_2: 'Аз съм Силвия.',
+                    hero_2_line_1: 'Без думи.', hero_2_line_2: 'Само настроение.',
+                    hero_3_line_1: 'Снимките', hero_3_line_2: 'казват достатъчно.',
+                    hero_4_line_1: 'Останалото', hero_4_line_2: 'ще кажа лично.',
+                    hero_5_line_1: 'Пиши ми.', hero_5_line_2: 'Ако ти се иска.', scroll: 'Надолу', phone_action: 'Обади се',
                     statement_line_1: 'Не съм по дългите', statement_line_2: 'представяния.',
                     about_copy: 'Снимките казват достатъчно. Останалото предпочитам да кажа лично.',
                     contact_line_1: 'Кажи', contact_line_2: '„здравей“.', contact_copy: 'Пиши ми там, където ти е най-удобно.',
@@ -165,7 +175,11 @@
                     meta_title: 'Silvia',
                     meta_description: 'Silvia — personal website and direct contact.',
                     skip: 'Skip to content', nav_about: 'About', nav_contact: 'Contact',
-                    hero_line_1: 'Look.', hero_line_2: 'Then message me.', scroll: 'Scroll', phone_action: 'Call me',
+                    hero_1_line_1: 'Hello.', hero_1_line_2: 'I’m Silvia.',
+                    hero_2_line_1: 'No words.', hero_2_line_2: 'Just a mood.',
+                    hero_3_line_1: 'The photos', hero_3_line_2: 'say enough.',
+                    hero_4_line_1: 'The rest', hero_4_line_2: 'I’ll tell you myself.',
+                    hero_5_line_1: 'Message me.', hero_5_line_2: 'If you feel like it.', scroll: 'Scroll', phone_action: 'Call me',
                     statement_line_1: 'I’m not one for long', statement_line_2: 'introductions.',
                     about_copy: 'The photographs say enough. I’d rather share everything else with you personally.',
                     contact_line_1: 'Say', contact_line_2: '“hello.”', contact_copy: 'Message me wherever feels easiest.',
@@ -207,6 +221,7 @@
             applyLanguage(savedLanguage, false);
 
             const slides = [...document.querySelectorAll('.slide')];
+            const heroTitles = [...document.querySelectorAll('.hero-title')];
             const dots = [...document.querySelectorAll('.slide-dots button')];
             const number = document.getElementById('slide-number');
             const header = document.getElementById('site-header');
@@ -230,9 +245,15 @@
                 }
                 if (token !== changeToken) return;
                 const previous = document.querySelector('.slide.active');
+                const nextTitle = heroTitles[index];
+                const previousTitle = document.querySelector('.hero-title.active');
                 window.clearTimeout(transitionCleanup);
                 slides.forEach((slide) => {
                     if (slide !== previous && slide !== next) slide.classList.remove('active', 'outgoing');
+                });
+                heroTitles.forEach((title) => {
+                    if (title !== previousTitle && title !== nextTitle) title.classList.remove('active', 'outgoing');
+                    title.setAttribute('aria-hidden', String(title !== nextTitle));
                 });
 
                 if (previous && previous !== next) {
@@ -241,9 +262,20 @@
                     next.classList.remove('outgoing', 'active');
                     void next.offsetWidth;
                     next.classList.add('active');
-                    transitionCleanup = window.setTimeout(() => previous.classList.remove('outgoing'), fadeDuration + 120);
+                    if (previousTitle && previousTitle !== nextTitle) {
+                        previousTitle.classList.add('outgoing');
+                        previousTitle.classList.remove('active');
+                        nextTitle.classList.remove('outgoing', 'active');
+                        void nextTitle.offsetWidth;
+                        nextTitle.classList.add('active');
+                    }
+                    transitionCleanup = window.setTimeout(() => {
+                        previous.classList.remove('outgoing');
+                        if (previousTitle) previousTitle.classList.remove('outgoing');
+                    }, fadeDuration + 120);
                 } else if (!next.classList.contains('active')) {
                     next.classList.add('active');
+                    nextTitle.classList.add('active');
                 }
 
                 dots.forEach((dot, i) => {
