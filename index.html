@@ -1,45 +1,50 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="bg" data-lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Silvia — личен сайт и директен контакт.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-visual">
+    <meta name="description" id="meta-description" content="Silvia — личен сайт и директен контакт.">
     <meta name="theme-color" content="#090909">
     <title>Silvia</title>
+    <link rel="preload" as="image" href="1.webp" imagesrcset="1-1600.webp 1600w, 1.webp 3200w" imagesizes="(max-width: 820px) 900px, 100vw" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a class="skip-link" href="#content">Към съдържанието</a>
+    <a class="skip-link" href="#content" data-i18n="skip">Към съдържанието</a>
 
     <header class="site-header" id="site-header">
         <a class="brand" href="#top" aria-label="Silvia — начало">SILVIA</a>
-        <nav aria-label="Основна навигация">
-            <a href="#silvia">За мен</a>
-            <a href="#contact">Контакт <span aria-hidden="true">↗</span></a>
-        </nav>
+        <div class="header-actions">
+            <nav aria-label="Основна навигация">
+                <a href="#silvia" data-i18n="nav_about">За мен</a>
+                <a href="#contact"><span data-i18n="nav_contact">Контакт</span> <span aria-hidden="true">↗</span></a>
+            </nav>
+            <div class="language-switch" role="group" aria-label="Език / Language">
+                <button type="button" class="active" data-language="bg" aria-pressed="true">BG</button>
+                <button type="button" data-language="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
     </header>
 
     <main id="content">
         <section class="hero" id="top" aria-label="Silvia">
             <div class="slideshow" aria-hidden="true">
-                <img src="1.webp" class="slide active" alt="">
-                <img src="2.webp" class="slide" alt="">
-                <img src="3.webp" class="slide" alt="">
-                <img src="4.webp" class="slide" alt="">
-                <img src="5.webp" class="slide" alt="">
+                <img src="1.webp" srcset="1-1600.webp 1600w, 1.webp 3200w" sizes="(max-width: 820px) 900px, 100vw" class="slide active" alt="" role="presentation" width="3198" height="1800" loading="eager" decoding="async" fetchpriority="high">
+                <img src="2.webp" srcset="2-1600.webp 1600w, 2.webp 3200w" sizes="(max-width: 820px) 900px, 100vw" class="slide" alt="" role="presentation" width="3200" height="1800" loading="eager" decoding="async" fetchpriority="low">
+                <img src="3.webp" srcset="3-1600.webp 1600w, 3.webp 3200w" sizes="(max-width: 820px) 900px, 100vw" class="slide" alt="" role="presentation" width="3200" height="1800" loading="eager" decoding="async" fetchpriority="low">
+                <img src="4.webp" srcset="4-1600.webp 1600w, 4.webp 3200w" sizes="(max-width: 820px) 900px, 100vw" class="slide" alt="" role="presentation" width="3200" height="1800" loading="eager" decoding="async" fetchpriority="low">
+                <img src="5.webp" srcset="5-1600.webp 1600w, 5.webp 3200w" sizes="(max-width: 820px) 900px, 100vw" class="slide" alt="" role="presentation" width="3200" height="1800" loading="eager" decoding="async" fetchpriority="low">
             </div>
             <div class="hero-shade" aria-hidden="true"></div>
 
             <div class="hero-inner">
-                <p class="hero-kicker"><span>Личен сайт</span><span>01 — 05</span></p>
-
-                <h1><span>Гледай.</span><em>После ми пиши.</em></h1>
+                <h1><span data-i18n="hero_line_1">Гледай.</span><em data-i18n="hero_line_2">После ми пиши.</em></h1>
 
                 <div class="hero-bottom">
-                    <a class="scroll-link" href="#silvia"><span>Надолу</span><i aria-hidden="true"></i></a>
+                    <a class="scroll-link" href="#silvia"><span data-i18n="scroll">Надолу</span><i aria-hidden="true"></i></a>
 
                     <div class="hero-contacts" aria-label="Бърз контакт">
                         <a href="https://wa.me/359886711058" target="_blank" rel="noopener noreferrer" class="quick-link whatsapp" aria-label="Пиши в WhatsApp">
@@ -52,7 +57,7 @@
                         </a>
                         <a href="tel:+359886711058" class="quick-link phone" aria-label="Обади се на 088 671 1058">
                             <span class="platform-mark"><svg aria-hidden="true"><use href="#icon-phone"></use></svg></span>
-                            <span>Обади се</span>
+                            <span data-i18n="phone_action">Обади се</span>
                         </a>
                     </div>
 
@@ -74,9 +79,8 @@
         <section class="statement" id="silvia">
             <div class="statement-letter" aria-hidden="true">S</div>
             <div class="section-shell statement-inner">
-                <div class="section-index reveal"><span>01</span><p>Силвия</p></div>
-                <h2 class="reveal">Не съм по дългите<br><em>представяния.</em></h2>
-                <p class="statement-note reveal">Снимките казват достатъчно.<br>Останалото — лично.</p>
+                <h2 class="reveal"><span data-i18n="statement_line_1">Не съм по дългите</span><br><em data-i18n="statement_line_2">представяния.</em></h2>
+                <p class="statement-note reveal" data-i18n="about_copy">Снимките казват достатъчно. Останалото предпочитам да кажа лично.</p>
                 <div class="statement-rule reveal" aria-hidden="true"><span></span></div>
             </div>
         </section>
@@ -84,24 +88,26 @@
         <section class="contact" id="contact">
             <div class="section-shell contact-inner">
                 <div class="contact-heading">
-                    <div class="section-index light reveal"><span>02</span><p>Контакт</p></div>
-                    <h2 class="reveal">Кажи<br><em>„здравей“.</em></h2>
+                    <div>
+                        <h2 class="reveal"><span data-i18n="contact_line_1">Кажи</span><br><em data-i18n="contact_line_2">„здравей“.</em></h2>
+                        <p class="contact-copy reveal" data-i18n="contact_copy">Пиши ми там, където ти е най-удобно.</p>
+                    </div>
                 </div>
 
                 <div class="contact-list reveal">
                     <a href="https://wa.me/359886711058" target="_blank" rel="noopener noreferrer" class="contact-row whatsapp">
                         <span class="row-number">01</span>
                         <span class="row-name"><span class="platform-mark"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></span>WhatsApp</span>
-                        <span class="row-action">Пиши ми <b aria-hidden="true">↗</b></span>
+                        <span class="row-action"><span data-i18n="whatsapp_action">Пиши ми</span> <b aria-hidden="true">↗</b></span>
                     </a>
                     <a href="viber://chat?number=%2B359886711058" class="contact-row viber">
                         <span class="row-number">02</span>
                         <span class="row-name"><span class="platform-mark"><svg aria-hidden="true"><use href="#icon-viber"></use></svg></span>Viber</span>
-                        <span class="row-action">Пиши ми <b aria-hidden="true">↗</b></span>
+                        <span class="row-action"><span data-i18n="viber_action">Пиши ми</span> <b aria-hidden="true">↗</b></span>
                     </a>
                     <a href="tel:+359886711058" class="contact-row phone">
                         <span class="row-number">03</span>
-                        <span class="row-name"><span class="platform-mark"><svg aria-hidden="true"><use href="#icon-phone"></use></svg></span>Телефон</span>
+                        <span class="row-name"><span class="platform-mark"><svg aria-hidden="true"><use href="#icon-phone"></use></svg></span><span data-i18n="phone_label">Телефон</span></span>
                         <span class="row-action">088 671 1058 <b aria-hidden="true">↗</b></span>
                     </a>
                 </div>
@@ -111,8 +117,8 @@
 
     <footer class="site-footer">
         <a class="brand" href="#top">SILVIA</a>
-        <p>Личен сайт · <span id="year">2026</span></p>
-        <a href="#top">Нагоре <span aria-hidden="true">↑</span></a>
+        <p>© <span id="year">2026</span></p>
+        <a href="#top"><span data-i18n="back_to_top">Нагоре</span> <span aria-hidden="true">↑</span></a>
     </footer>
 
     <svg class="svg-sprite" aria-hidden="true" focusable="false">
@@ -129,21 +135,106 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const i18n = {
+                bg: {
+                    meta_title: 'Silvia',
+                    meta_description: 'Silvia — личен сайт и директен контакт.',
+                    skip: 'Към съдържанието', nav_about: 'За мен', nav_contact: 'Контакт',
+                    hero_line_1: 'Гледай.', hero_line_2: 'После ми пиши.', scroll: 'Надолу', phone_action: 'Обади се',
+                    statement_line_1: 'Не съм по дългите', statement_line_2: 'представяния.',
+                    about_copy: 'Снимките казват достатъчно. Останалото предпочитам да кажа лично.',
+                    contact_line_1: 'Кажи', contact_line_2: '„здравей“.', contact_copy: 'Пиши ми там, където ти е най-удобно.',
+                    whatsapp_action: 'Пиши ми', viber_action: 'Пиши ми', phone_label: 'Телефон', back_to_top: 'Нагоре'
+                },
+                en: {
+                    meta_title: 'Silvia',
+                    meta_description: 'Silvia — personal website and direct contact.',
+                    skip: 'Skip to content', nav_about: 'About', nav_contact: 'Contact',
+                    hero_line_1: 'Look.', hero_line_2: 'Then message me.', scroll: 'Scroll', phone_action: 'Call me',
+                    statement_line_1: 'I’m not one for long', statement_line_2: 'introductions.',
+                    about_copy: 'The photographs say enough. I’d rather share everything else with you personally.',
+                    contact_line_1: 'Say', contact_line_2: '“hello.”', contact_copy: 'Message me wherever feels easiest.',
+                    whatsapp_action: 'Message me', viber_action: 'Message me', phone_label: 'Phone', back_to_top: 'Back to top'
+                }
+            };
+            const languageButtons = [...document.querySelectorAll('[data-language]')];
+
+            function applyLanguage(language, animate = true) {
+                const lang = i18n[language] ? language : 'bg';
+                const update = () => {
+                    document.documentElement.lang = lang;
+                    document.documentElement.dataset.lang = lang;
+                    document.title = i18n[lang].meta_title;
+                    document.getElementById('meta-description').content = i18n[lang].meta_description;
+                    document.querySelectorAll('[data-i18n]').forEach((element) => {
+                        const value = i18n[lang][element.dataset.i18n];
+                        if (value !== undefined) element.textContent = value;
+                    });
+                    languageButtons.forEach((button) => {
+                        const active = button.dataset.language === lang;
+                        button.classList.toggle('active', active);
+                        button.setAttribute('aria-pressed', String(active));
+                    });
+                    try { localStorage.setItem('silvia-language', lang); } catch (_) { /* Storage may be unavailable. */ }
+                };
+
+                if (!animate) {
+                    update();
+                    return;
+                }
+
+                document.body.classList.add('language-changing');
+                window.setTimeout(() => {
+                    update();
+                    requestAnimationFrame(() => document.body.classList.remove('language-changing'));
+                }, 150);
+            }
+
+            languageButtons.forEach((button) => button.addEventListener('click', () => applyLanguage(button.dataset.language)));
+            let savedLanguage = 'bg';
+            try { savedLanguage = localStorage.getItem('silvia-language') === 'en' ? 'en' : 'bg'; } catch (_) { /* BG remains the default. */ }
+            applyLanguage(savedLanguage, false);
+
             const slides = [...document.querySelectorAll('.slide')];
             const dots = [...document.querySelectorAll('.slide-dots button')];
             const number = document.getElementById('slide-number');
             const header = document.getElementById('site-header');
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const duration = 6500;
+            const duration = 7000;
+            const fadeDuration = 5800;
             let current = 0;
             let timer = null;
+            let transitionCleanup = null;
+            let changeToken = 0;
 
             const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 36);
             updateHeader();
             window.addEventListener('scroll', updateHeader, { passive: true });
 
-            function paint(index) {
-                slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            async function paint(index) {
+                const next = slides[index];
+                const token = ++changeToken;
+                if (typeof next.decode === 'function') {
+                    try { await next.decode(); } catch (_) { /* The browser will still render the loaded image. */ }
+                }
+                if (token !== changeToken) return;
+                const previous = document.querySelector('.slide.active');
+                window.clearTimeout(transitionCleanup);
+                slides.forEach((slide) => {
+                    if (slide !== previous && slide !== next) slide.classList.remove('active', 'outgoing');
+                });
+
+                if (previous && previous !== next) {
+                    previous.classList.add('outgoing');
+                    previous.classList.remove('active');
+                    next.classList.remove('outgoing', 'active');
+                    void next.offsetWidth;
+                    next.classList.add('active');
+                    transitionCleanup = window.setTimeout(() => previous.classList.remove('outgoing'), fadeDuration + 120);
+                } else if (!next.classList.contains('active')) {
+                    next.classList.add('active');
+                }
+
                 dots.forEach((dot, i) => {
                     dot.classList.remove('active');
                     if (i === index) dot.setAttribute('aria-current', 'true');
@@ -155,32 +246,45 @@
             }
 
             function stop() {
-                window.clearInterval(timer);
+                window.clearTimeout(timer);
                 timer = null;
             }
 
             function start() {
                 stop();
                 if (!document.hidden) {
-                    timer = window.setInterval(() => {
+                    timer = window.setTimeout(async () => {
                         current = (current + 1) % slides.length;
-                        paint(current);
+                        await paint(current);
+                        start();
                     }, duration);
                 }
             }
 
             dots.forEach((dot) => dot.addEventListener('click', () => {
                 current = Number(dot.dataset.slide);
-                paint(current);
+                void paint(current);
                 start();
             }));
 
             document.addEventListener('visibilitychange', () => {
-                if (!document.hidden) paint(current);
+                if (!document.hidden) void paint(current);
                 start();
             });
-            paint(0);
+            void paint(0);
             start();
+
+            const warmSlides = async () => {
+                for (const slide of slides.slice(1)) {
+                    if (typeof slide.decode !== 'function') continue;
+                    try { await slide.decode(); } catch (_) { /* Continue warming the remaining images. */ }
+                }
+            };
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(() => void warmSlides(), { timeout: 2400 });
+            } else {
+                window.setTimeout(() => void warmSlides(), 600);
+            }
 
             const reveals = document.querySelectorAll('.reveal');
             if ('IntersectionObserver' in window && !reduceMotion) {
